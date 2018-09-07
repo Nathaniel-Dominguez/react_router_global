@@ -12,18 +12,14 @@ import About from './About';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+      <div>
         <Router>
           <div>
             <nav>
               <Link to="/">Home</Link>
               <Link to="/post">Blog</Link>
-              <Link to="/favoritefood">Favorite Food</Link>
-              <Link to="/favoritemovie">Favorite Movie</Link>
+              <Link to="/favorite/food">Favorite Food</Link>
+              <Link to="/favorite/movie">Favorite Movie</Link>
             </nav>
             <Route exact path="/" component={Home}/>
             <Route path="/post" component={ () => 
@@ -34,7 +30,7 @@ class App extends Component {
                     />
             }/>
             <Route path="/favorite/food" component={ () =>
-              <FavoriteFood food="Food" />
+              <FavoriteFood food="The Best Food" />
             }/>
             <Route path="/favorite/movie" component={ () => 
               <FavoriteMovie title="The Best Movie of All" about="It's the best" />
